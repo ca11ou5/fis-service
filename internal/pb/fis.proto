@@ -1,0 +1,120 @@
+syntax = "proto3";
+package fis;
+option go_package = "./internal/pb";
+
+service FisService {
+  rpc FullMappingAndSave(FullMappingAndSaveRequest) returns (FullMappingAndSaveResponse){}
+}
+
+message FullMappingAndSaveRequest {
+  Application application = 1;
+  string requestId = 2;
+}
+
+message FullMappingAndSaveResponse {
+  int64 status = 1;
+  string error = 2;
+}
+
+message Application {
+  string name = 1;
+  string surname = 2;
+  string patronymic = 3;
+  string phone = 4;
+  string birthdate = 5;
+  string passportSeries = 6;
+  string passportNumber = 7;
+  string passportDate = 8;
+  int32 sum = 9;
+  string utmMedium = 10;
+  string utmSource = 11;
+  string utmCampaign = 12;
+  string utmContent = 13;
+  string utmTerm = 14;
+  string ipAddressClient = 15;
+  int32 term = 16;
+  string gender = 17;
+  string validPhone = 18;
+  bool agree = 19;
+  string birthPlace = 20;
+  string birthCountry = 21;
+  string citizenship = 22;
+  string passportCode = 23;
+  string passportOrgan = 24;
+  string registrationDate = 25;
+  string registrationAddress = 26;
+  string lifeAddress = 27;
+  string lifeAddressDate = 28;
+  bool differentRegistration = 29;
+  int32 salary = 30;
+  int32 otherSalary = 31;
+  string maritalStatus = 32;
+  string spouseName = 33;
+  string spouseSurname = 34;
+  string spousePatronymic = 35;
+  string spouseBirthdate = 36;
+  string spousePhone = 37;
+  string socialStatus = 38;
+  string education = 39;
+  string additionalContactPhone = 40;
+  string additionalContact = 41;
+  string additionalContactSurname = 42;
+  string additionalContactName = 43;
+  string additionalContactPatronymic = 44;
+  bool additionalContactAgreement = 45;
+  bool hasOldPassport = 46;
+  string oldPassportSeries = 47;
+  string oldPassportNumber = 48;
+  string oldPassportCode = 49;
+  string oldPassportDate = 50;
+  string oldPassportOrgan = 51;
+  bool changedCredentials = 52;
+  string oldSurname = 53;
+  string oldName = 54;
+  string oldPatronymic = 55;
+  string lastNameChangeReason = 56;
+  int32 changeCredentialsYear = 57;
+  string livingType = 58;
+  string workName = 59;
+  string workAge = 60;
+  string workDate = 61;
+  string workEmployerIndustry = 62;
+  string workEmployerType = 63;
+  string workPhone = 64;
+  string experience = 65;
+  string employerType = 66;
+  string workPosition = 67;
+  WorkSector workSector = 68;
+  string workAddress = 69;
+  bool hasCar = 70;
+  bool hasCarNumber = 71;
+  string carMark = 72;
+  string carModel = 73;
+  string carNumber = 74;
+  string carYear = 75;
+  bool hasRealEstate = 76;
+  string realEstatePropertyType = 77;
+  string realEstateType = 78;
+  string realEstateRooms = 79;
+  string realEstateWayToGet = 80;
+  string realEstateAddress = 81;
+  string productName = 82;
+  string eMail = 83;
+  string region = 84;
+  AdditionalData additionalData = 85;
+}
+
+message WorkSector {
+  string type = 1;
+  string description = 2;
+}
+
+message AdditionalData {
+  QsParams qsParams = 1;
+  string cookie = 2;
+  string url = 3;
+  KameleoonData kameleoonData = 4;
+}
+
+message QsParams {}
+message KameleoonData{}
